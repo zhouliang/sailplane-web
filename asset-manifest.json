@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sailplan-web/static/css/main.aed6dde3.chunk.css",
+    "main.js": "/sailplan-web/static/js/main.22e038e8.chunk.js",
+    "main.js.map": "/sailplan-web/static/js/main.22e038e8.chunk.js.map",
+    "runtime-main.js": "/sailplan-web/static/js/runtime-main.5dbae80b.js",
+    "runtime-main.js.map": "/sailplan-web/static/js/runtime-main.5dbae80b.js.map",
+    "static/js/2.09b17e94.chunk.js": "/sailplan-web/static/js/2.09b17e94.chunk.js",
+    "static/js/2.09b17e94.chunk.js.map": "/sailplan-web/static/js/2.09b17e94.chunk.js.map",
+    "index.html": "/sailplan-web/index.html",
+    "precache-manifest.ed4c06ceaee053c2ab67ce4ae5d28a39.js": "/sailplan-web/precache-manifest.ed4c06ceaee053c2ab67ce4ae5d28a39.js",
+    "service-worker.js": "/sailplan-web/service-worker.js",
+    "static/css/main.aed6dde3.chunk.css.map": "/sailplan-web/static/css/main.aed6dde3.chunk.css.map",
+    "static/js/2.09b17e94.chunk.js.LICENSE.txt": "/sailplan-web/static/js/2.09b17e94.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5dbae80b.js",
+    "static/js/2.09b17e94.chunk.js",
+    "static/css/main.aed6dde3.chunk.css",
+    "static/js/main.22e038e8.chunk.js"
+  ]
+}
