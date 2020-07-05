@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/sailplane-web/static/css/main.12253beb.chunk.css",
-    "main.js": "/sailplane-web/static/js/main.2356f15a.chunk.js",
-    "main.js.map": "/sailplane-web/static/js/main.2356f15a.chunk.js.map",
+    "main.js": "/sailplane-web/static/js/main.f46d1090.chunk.js",
+    "main.js.map": "/sailplane-web/static/js/main.f46d1090.chunk.js.map",
     "runtime-main.js": "/sailplane-web/static/js/runtime-main.a6747d37.js",
     "runtime-main.js.map": "/sailplane-web/static/js/runtime-main.a6747d37.js.map",
     "static/js/2.c6746ed3.chunk.js": "/sailplane-web/static/js/2.c6746ed3.chunk.js",
     "static/js/2.c6746ed3.chunk.js.map": "/sailplane-web/static/js/2.c6746ed3.chunk.js.map",
     "index.html": "/sailplane-web/index.html",
-    "precache-manifest.32100616142b6eb6cfd1c90d4e8d15e5.js": "/sailplane-web/precache-manifest.32100616142b6eb6cfd1c90d4e8d15e5.js",
+    "precache-manifest.8a17a8087edcc2c110b9ffe95fe9baef.js": "/sailplane-web/precache-manifest.8a17a8087edcc2c110b9ffe95fe9baef.js",
     "service-worker.js": "/sailplane-web/service-worker.js",
     "static/css/main.12253beb.chunk.css.map": "/sailplane-web/static/css/main.12253beb.chunk.css.map",
     "static/js/2.c6746ed3.chunk.js.LICENSE.txt": "/sailplane-web/static/js/2.c6746ed3.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a6747d37.js",
     "static/js/2.c6746ed3.chunk.js",
     "static/css/main.12253beb.chunk.css",
-    "static/js/main.2356f15a.chunk.js"
+    "static/js/main.f46d1090.chunk.js"
   ]
 }
