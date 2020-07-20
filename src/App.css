@@ -61,10 +61,50 @@ input:focus, textarea:focus, select:focus, audio:focus, source:focus {
 
 .jumping {
     position: relative;
-    animation: jumping 2s linear 2s 1;
+    animation: jumping 2s linear 2s;
 }
 
 .jumpingDrop {
     position: relative;
     animation: jumping 2s linear 2s infinite;
+}
+
+@keyframes flying {
+    0% {
+        transform: rotate(0deg);
+        top: 0px;
+        left: 0;
+    }
+    10% {
+        transform: rotate(35deg);
+        left: 0;
+        top: -30px;
+        /*left: 100px;*/
+    }
+    30% {
+        transform: rotate(140deg);
+
+        top: -24px;
+        left: 150px;
+    }
+    50% {
+        transform: rotate(240deg);
+        left: 150px;
+        top: 200px;
+    }
+    75% {
+        transform: rotate(300deg);
+        left: 0;
+        top: 200px;
+    }
+    100% {
+        transform: rotate(360deg);
+        top: 0;
+        left: 0;
+    }
+}
+
+.flying {
+    position: relative;
+    animation: flying 20s linear;
 }

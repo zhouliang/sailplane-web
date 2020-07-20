@@ -107,7 +107,7 @@ export function LeftPanel({setCurrentRightPanel, currentRightPanel}) {
                 window.location.origin + window.location.pathname
               }`;
             }}>
-            <FaPaperPlane color={'#FFF'} size={18} style={styles.icon} />
+            <FaPaperPlane color={'#FFF'} size={18} style={styles.icon} className={'flying'} />
             Sailplane
           </div>
         </div>
