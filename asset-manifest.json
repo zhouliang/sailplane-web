@@ -3,15 +3,15 @@
     "static/js/0.079711f4.chunk.js": "/sailplane-web/static/js/0.079711f4.chunk.js",
     "static/js/0.079711f4.chunk.js.map": "/sailplane-web/static/js/0.079711f4.chunk.js.map",
     "main.css": "/sailplane-web/static/css/main.2ef4dfa6.chunk.css",
-    "main.js": "/sailplane-web/static/js/main.803aa40d.chunk.js",
-    "main.js.map": "/sailplane-web/static/js/main.803aa40d.chunk.js.map",
+    "main.js": "/sailplane-web/static/js/main.8ff925fa.chunk.js",
+    "main.js.map": "/sailplane-web/static/js/main.8ff925fa.chunk.js.map",
     "runtime-main.js": "/sailplane-web/static/js/runtime-main.5d57c581.js",
     "runtime-main.js.map": "/sailplane-web/static/js/runtime-main.5d57c581.js.map",
     "static/css/3.9522b9fe.chunk.css": "/sailplane-web/static/css/3.9522b9fe.chunk.css",
     "static/js/3.6feee94a.chunk.js": "/sailplane-web/static/js/3.6feee94a.chunk.js",
     "static/js/3.6feee94a.chunk.js.map": "/sailplane-web/static/js/3.6feee94a.chunk.js.map",
     "index.html": "/sailplane-web/index.html",
-    "precache-manifest.b39c5a0cd2b7cacf5f11649697974b85.js": "/sailplane-web/precache-manifest.b39c5a0cd2b7cacf5f11649697974b85.js",
+    "precache-manifest.3d99de2d216fb5af5db06dde375e028c.js": "/sailplane-web/precache-manifest.3d99de2d216fb5af5db06dde375e028c.js",
     "service-worker.js": "/sailplane-web/service-worker.js",
     "static/css/3.9522b9fe.chunk.css.map": "/sailplane-web/static/css/3.9522b9fe.chunk.css.map",
     "static/css/main.2ef4dfa6.chunk.css.map": "/sailplane-web/static/css/main.2ef4dfa6.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/3.9522b9fe.chunk.css",
     "static/js/3.6feee94a.chunk.js",
     "static/css/main.2ef4dfa6.chunk.css",
-    "static/js/main.803aa40d.chunk.js"
+    "static/js/main.8ff925fa.chunk.js"
   ]
 }
