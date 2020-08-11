@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sailplane-web/precache-manifest.63548d1eda1c1220fd0c74b4b22a6b1a.js"
+  "/sailplane-web/precache-manifest.b39c5a0cd2b7cacf5f11649697974b85.js"
 );
 
 self.addEventListener('message', (event) => {
