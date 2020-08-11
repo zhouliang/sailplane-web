@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "276af7f4e8317c3b2178b4125fbe3151",
+    "revision": "59b97999f0362fac4558f6e8ae83574a",
     "url": "/sailplane-web/index.html"
   },
   {
