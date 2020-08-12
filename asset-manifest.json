@@ -3,26 +3,26 @@
     "static/js/0.bce4cbe6.chunk.js": "/sailplane-web/static/js/0.bce4cbe6.chunk.js",
     "static/js/0.bce4cbe6.chunk.js.map": "/sailplane-web/static/js/0.bce4cbe6.chunk.js.map",
     "main.css": "/sailplane-web/static/css/main.2ef4dfa6.chunk.css",
-    "main.js": "/sailplane-web/static/js/main.b507d846.chunk.js",
-    "main.js.map": "/sailplane-web/static/js/main.b507d846.chunk.js.map",
+    "main.js": "/sailplane-web/static/js/main.69b3169d.chunk.js",
+    "main.js.map": "/sailplane-web/static/js/main.69b3169d.chunk.js.map",
     "runtime-main.js": "/sailplane-web/static/js/runtime-main.c72b08f9.js",
     "runtime-main.js.map": "/sailplane-web/static/js/runtime-main.c72b08f9.js.map",
     "static/css/3.9522b9fe.chunk.css": "/sailplane-web/static/css/3.9522b9fe.chunk.css",
-    "static/js/3.f6fd3021.chunk.js": "/sailplane-web/static/js/3.f6fd3021.chunk.js",
-    "static/js/3.f6fd3021.chunk.js.map": "/sailplane-web/static/js/3.f6fd3021.chunk.js.map",
+    "static/js/3.6ec7af8e.chunk.js": "/sailplane-web/static/js/3.6ec7af8e.chunk.js",
+    "static/js/3.6ec7af8e.chunk.js.map": "/sailplane-web/static/js/3.6ec7af8e.chunk.js.map",
     "index.html": "/sailplane-web/index.html",
-    "precache-manifest.daf5420785167954a3044987ba0c40ab.js": "/sailplane-web/precache-manifest.daf5420785167954a3044987ba0c40ab.js",
+    "precache-manifest.6b109c27804beeee7910c52e0eafcd61.js": "/sailplane-web/precache-manifest.6b109c27804beeee7910c52e0eafcd61.js",
     "service-worker.js": "/sailplane-web/service-worker.js",
     "static/css/3.9522b9fe.chunk.css.map": "/sailplane-web/static/css/3.9522b9fe.chunk.css.map",
     "static/css/main.2ef4dfa6.chunk.css.map": "/sailplane-web/static/css/main.2ef4dfa6.chunk.css.map",
-    "static/js/3.f6fd3021.chunk.js.LICENSE.txt": "/sailplane-web/static/js/3.f6fd3021.chunk.js.LICENSE.txt",
+    "static/js/3.6ec7af8e.chunk.js.LICENSE.txt": "/sailplane-web/static/js/3.6ec7af8e.chunk.js.LICENSE.txt",
     "static/media/intro1-2.png": "/sailplane-web/static/media/intro1-2.947c9524.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c72b08f9.js",
     "static/css/3.9522b9fe.chunk.css",
-    "static/js/3.f6fd3021.chunk.js",
+    "static/js/3.6ec7af8e.chunk.js",
     "static/css/main.2ef4dfa6.chunk.css",
-    "static/js/main.b507d846.chunk.js"
+    "static/js/main.69b3169d.chunk.js"
   ]
 }
