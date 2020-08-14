@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d259661fb5adb3ed2983e0e25abe76be",
+    "revision": "795e16ab660ad12b2d810ad1fb3ace7b",
     "url": "/sailplane-web/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sailplane-web/static/css/3.9522b9fe.chunk.css"
   },
   {
-    "revision": "75c3dcd81389e624e00c",
+    "revision": "a9f74df4ba4f084e4421",
     "url": "/sailplane-web/static/css/main.2ef4dfa6.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sailplane-web/static/js/3.f92540f7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "75c3dcd81389e624e00c",
-    "url": "/sailplane-web/static/js/main.180b9fdd.chunk.js"
+    "revision": "a9f74df4ba4f084e4421",
+    "url": "/sailplane-web/static/js/main.85b1f3ea.chunk.js"
   },
   {
     "revision": "187c58262f2bf75a08cb",
