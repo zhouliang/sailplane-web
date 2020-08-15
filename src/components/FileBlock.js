@@ -7,6 +7,7 @@ import {StatusBar} from './StatusBar';
 import {ShareDialog} from './ShareDialog';
 import {useIsSmallScreen} from '../hooks/useIsSmallScreen';
 import {DraggableFileItem} from './DraggableFileItem';
+import {LoadingRightBlock} from './LoadingRightBlock';
 import {
   filterImageFiles,
   getBlobFromPath,
@@ -17,6 +18,8 @@ import {
   sortDirectoryContents,
   delay,
 } from '../utils/Utils';
+import {driveName} from '../utils/sailplane-util';
+import { hasRead } from '../utils/sailplane-access';
 import {FileDragBlock} from './FileDragBlock';
 import Lightbox from 'react-image-lightbox';
 import {setStatus} from '../actions/tempData';
@@ -71,7 +74,7 @@ export function FileBlock({
   directoryContents,
   setCurrentDirectory,
   currentDirectory,
-  isEncrypted,
+  nickname,
 }) {
   const isSmallScreen = useIsSmallScreen();
   const dropzoneRef = useRef(null);
@@ -85,6 +88,10 @@ export function FileBlock({
   const [imageURLS, setImageURLS] = useState(new Array(1000));
   const imageFiles = filterImageFiles(fullFileList);
   const dispatch = useDispatch();
+  const isEncrypted = !!sharedFs.current._db.options.meta?.enc
+  const hasAccess = isEncrypted
+    ? hasRead(sharedFs.current) && sharedFs.current.crypting
+    : true
 
   useEffect(() => {
     setImageURLS(new Array(1000));
@@ -138,6 +145,17 @@ export function FileBlock({
 
     loadImages();
   }, [imageFiles.length, isImageOpen, currentDirectory]);
+
+  if (!hasAccess) {
+    return (
+      <LoadingRightBlock
+        message={`You do not have access to this drive [${
+          nickname || driveName(sharedFs.current.address)
+        }].`}
+        loading={false}
+      />
+    );
+  }
 
   return (
     <div style={styles.container}>

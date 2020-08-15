@@ -51,6 +51,27 @@ export default function InstanceAccessDialog({
     getPerms();
   }, [instanceToModifyAccess.address, sharedFS, lastUpdate]);
 
+  const loopedAccess = sharedFS.current.access?._db?.access.type === 'loop';
+
+  const addAdmin = async (userID) => {
+    setError(null);
+
+    if (!sailplaneAccess.userPubValid(userID)) {
+      setError('Invalid user ID!');
+      return;
+    }
+
+    if (!loopedAccess) {
+      setError('Cannot add new admin');
+      return;
+    }
+
+    await sailplaneAccess.grantAdmin(sharedFS.current, decompressKey(userID));
+    await sailplaneAccess.grantRead(sharedFS.current, decompressKey(userID));
+
+    setLastUpdate(Date.now());
+  };
+
   const addWriter = async (writerID) => {
     setError(null);
 
@@ -103,6 +124,7 @@ export default function InstanceAccessDialog({
           <div style={styles.panels}>
             <AccessDialogPanel
               myID={myID}
+              addUser={loopedAccess ? addAdmin : null}
               admins={admins}
               users={admins}
               type={'admin'}

@@ -1,5 +1,6 @@
 import {Buffer} from 'safe-buffer';
 import secp256k1 from 'secp256k1';
+import {compressKey} from './Utils';
 
 const perms = {
   admin: 'admin',
@@ -51,8 +52,12 @@ export async function grantWrite(sharedFS, userId) {
   return sharedFS.access.grant(perms.write, userId);
 }
 
+export async function grantAdmin(sharedFS, userId) {
+  return sharedFS.access.grant(perms.admin, userId);
+}
+
 export function hasRead(sharedFS, userPub = localUserPub(sharedFS)) {
-  return readers(sharedFS).has(userPub);
+  return readers(sharedFS).has(compressKey(userPub));
 }
 
 export function hasWrite(sharedFS, userId = localUserId(sharedFS)) {

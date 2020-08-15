@@ -88,6 +88,6 @@
     "source-map-explorer": "^2.4.2"
   },
   "resolutions": {
-    "orbit-db-access-controllers": "https://github.com/slavik0329/orbit-db-access-controllers#636355bc4ba04fff3a571468c681661e8837c850"
+    "orbit-db-access-controllers": "https://github.com/cypsela/orbit-db-access-controllers#7da4d94a0e7ec90d5a78ca58e4735da5d22786e8"
   }
 }

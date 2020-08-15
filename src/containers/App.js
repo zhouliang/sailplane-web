@@ -201,25 +201,19 @@ function App({}) {
     if (currentRightPanel === 'files') {
       const noDrives = instances.length === 0;
       const message = !noDrives ? 'Looking for drive...' : 'Create a drive';
-      return !instanceReady || noDrives ? (
+      return !instanceReady || noDrives
+        ? (
         <LoadingRightBlock message={message} loading={!noDrives} />
-      ) : noAccess ? (
-        <LoadingRightBlock
-          message={`You do not have access to this drive [${
-            currentInstance.label || driveName(currentInstance.address)
-          }].`}
-          loading={false}
-        />
-      ) : (
-        <FileBlock
-          isEncrypted={currentInstance.isEncrypted}
-          sharedFs={sharedFS}
-          ipfs={ipfsObj.ipfs}
-          directoryContents={directoryContents}
-          setCurrentDirectory={setCurrentDirectory}
-          currentDirectory={currentDirectory}
-        />
-      );
+        ) : (
+          <FileBlock
+            sharedFs={sharedFS}
+            ipfs={ipfsObj.ipfs}
+            directoryContents={directoryContents}
+            setCurrentDirectory={setCurrentDirectory}
+            currentDirectory={currentDirectory}
+            nickname={currentInstance.label || undefined}
+          />
+        );
     } else if (currentRightPanel === 'settings') {
       return <Settings sharedFS={sharedFS} />;
     } else if (currentRightPanel === 'contacts') {
