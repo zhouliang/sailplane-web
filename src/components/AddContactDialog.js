@@ -8,17 +8,15 @@ import {userPubValid} from '../utils/sailplane-access';
 import Well from './Well';
 import {FaQrcode} from 'react-icons/fa';
 import QRScanDialog from './QRScanDialog';
-import {isCameraSupported} from '../utils/Utils';
-import useIsCameraAvailable from '../hooks/useIsCameraAvailable';
+import {useForm} from 'react-hook-form';
 
 export default function AddContactDialog({onClose, isVisible, contacts, myID}) {
+  const {register, handleSubmit, errors, setValue, reset} = useForm(); // initialize the hook
+
   const dispatch = useDispatch();
 
   const existingIds = contacts ? [myID, ...contacts.map((c) => c.pubKey)] : [];
 
-  const [label, setLabel] = useState('');
-  const [pubKey, setPubKey] = useState('');
-  const [error, setError] = useState(null);
   const [isQRScanModalVisible, setIsQRScanModalVisible] = useState(false);
 
   const inputRef = useRef(null);
@@ -28,9 +26,7 @@ export default function AddContactDialog({onClose, isVisible, contacts, myID}) {
       inputRef.current.focus();
       inputRef.current.select();
     } else {
-      setPubKey('');
-      setLabel('');
-      setError(null);
+      reset();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible]);
@@ -72,9 +68,7 @@ export default function AddContactDialog({onClose, isVisible, contacts, myID}) {
       left: 4,
       fontSize: 13,
     },
-    inputIconContainer: {
-
-    },
+    inputIconContainer: {},
     inputIcon: {
       display: 'flex',
       alignItems: 'center',
@@ -92,17 +86,19 @@ export default function AddContactDialog({onClose, isVisible, contacts, myID}) {
     },
   };
 
-  const createContact = () => {
-    if (!userPubValid(pubKey)) {
-      setError('Invalid user ID');
-    } else if (existingIds.includes(pubKey)) {
-      setError('Contact already exists');
-    } else {
-      dispatch(addContact(pubKey, label));
-      onClose();
-    }
-  };
+  const createContact = (data) => {
+    // if (!userPubValid(pubKey)) {
+    //   setError('Invalid user ID');
+    // } else if (existingIds.includes(pubKey)) {
+    //   setError('Contact already exists');
+    // } else {
+    // }
+    const {pubKey, label} = data;
 
+    dispatch(addContact(pubKey, label));
+    onClose();
+  };
+  console.log(errors);
   return (
     <Dialog
       backgroundColor={primary15}
@@ -110,78 +106,88 @@ export default function AddContactDialog({onClose, isVisible, contacts, myID}) {
       title={'Add contact'}
       body={
         <div style={styles.body}>
-          {error ? <Well isError={true}>{error}</Well> : null}
-          <div style={styles.title}>User ID:</div>
+          <form>
+            <div style={styles.title}>User ID:</div>
 
-          <div style={styles.inputWrapper}>
+            {errors.pubKey && (
+              <Well isError={true}>{errors.pubKey.message}</Well>
+            )}
+            <div style={styles.inputWrapper}>
+              <input
+                ref={(e) => {
+                  register(e, {
+                    required: 'User ID is required.',
+                    validate: (value) =>
+                      userPubValid(value) || 'User ID invalid.',
+                  });
+                  inputRef.current = e;
+                }}
+                type={'text'}
+                name={'pubKey'}
+                autoCorrect={'off'}
+                style={styles.input}
+                placeholder={`(ex: 0356467b31...)`}
+                className={'textInput'}
+                onKeyPress={(event) => {
+                  if (event.key === 'Enter') {
+                    handleSubmit(createContact)();
+                  }
+                }}
+              />
+              <FaQrcode
+                onClick={() => setIsQRScanModalVisible(true)}
+                color={primary45}
+                size={16}
+                style={styles.inputIcon}
+              />
+            </div>
+
+            <div style={{...styles.title, ...styles.labelTitle}}>
+              Name
+              <span style={styles.optional}>(optional)</span>
+            </div>
+
             <input
-              ref={inputRef}
+              ref={register}
               type={'text'}
-              value={pubKey}
-              onChange={(event) => setPubKey(event.target.value)}
+              name={'label'}
               autoCorrect={'off'}
               style={styles.input}
-              placeholder={`(ex: 0356467b31...)`}
+              placeholder={`(ex: John Richardson)`}
               className={'textInput'}
               onKeyPress={(event) => {
                 if (event.key === 'Enter') {
-                  createContact();
+                  handleSubmit(createContact)();
                 }
               }}
             />
-            <FaQrcode
-              onClick={() => setIsQRScanModalVisible(true)}
-              color={primary45}
-              size={16}
-              style={styles.inputIcon}
-            />
-          </div>
 
-          <div style={{...styles.title, ...styles.labelTitle}}>
-            Name
-            <span style={styles.optional}>(optional)</span>
-          </div>
-
-          <input
-            type={'text'}
-            value={label}
-            onChange={(event) => setLabel(event.target.value)}
-            autoCorrect={'off'}
-            style={styles.input}
-            placeholder={`(ex: John Richardson)`}
-            className={'textInput'}
-            onKeyPress={(event) => {
-              if (event.key === 'Enter') {
-                createContact();
-              }
-            }}
-          />
-
-          <div style={styles.confirmBlock}>
-            <BigButton
-              title={'Cancel'}
-              inverted={false}
-              noHover={true}
-              customWhiteColor={primary15}
-              style={styles.cancel}
-              onClick={onClose}
+            <div style={styles.confirmBlock}>
+              <BigButton
+                title={'Cancel'}
+                inverted={false}
+                noHover={true}
+                customWhiteColor={primary15}
+                style={styles.cancel}
+                onClick={onClose}
+              />
+              <BigButton
+                id={'addContactDialogButton'}
+                title={'Add contact'}
+                onClick={() => handleSubmit(createContact)()}
+                inverted={true}
+                customWhiteColor={primary15}
+              />
+            </div>
+            <QRScanDialog
+              isVisible={isQRScanModalVisible}
+              onClose={() => setIsQRScanModalVisible(false)}
+              nScan={(userID) => {
+                setValue('pubKey', userID);
+                setIsQRScanModalVisible(false);
+              }}
             />
-            <BigButton
-              id={'addContactDialogButton'}
-              title={'Add contact'}
-              onClick={createContact}
-              inverted={true}
-              customWhiteColor={primary15}
-            />
-          </div>
-          <QRScanDialog
-            isVisible={isQRScanModalVisible}
-            onClose={() => setIsQRScanModalVisible(false)}
-            onScan={(userID)=>{
-              setPubKey(userID);
-              setIsQRScanModalVisible(false);
-            }}
-          />
+          </form>
         </div>
       }
       onClose={onClose}
