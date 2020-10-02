@@ -30,6 +30,7 @@
     "react-contexify": "^4.1.1",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.0.1",
+    "react-hook-form": "^6.8.6",
     "react-icons": "^3.10.0",
     "react-image-lightbox": "^5.1.1",
     "react-jdenticon": "https://github.com/slavik0329/react-jdenticon#2d785c94a5948402d0d800a096aa7243fe5ec036",
