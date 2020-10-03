@@ -72,7 +72,6 @@ export default function AddContactDialog({onClose, isVisible, contacts, myID}) {
     inputIcon: {
       display: 'flex',
       alignItems: 'center',
-      // height: '100%',
       position: 'absolute',
       right: 8,
       cursor: 'pointer',
@@ -87,18 +86,12 @@ export default function AddContactDialog({onClose, isVisible, contacts, myID}) {
   };
 
   const createContact = (data) => {
-    // if (!userPubValid(pubKey)) {
-    //   setError('Invalid user ID');
-    // } else if (existingIds.includes(pubKey)) {
-    //   setError('Contact already exists');
-    // } else {
-    // }
     const {pubKey, label} = data;
 
     dispatch(addContact(pubKey, label));
     onClose();
   };
-  console.log(errors);
+
   return (
     <Dialog
       backgroundColor={primary15}
@@ -117,8 +110,13 @@ export default function AddContactDialog({onClose, isVisible, contacts, myID}) {
                 ref={(e) => {
                   register(e, {
                     required: 'User ID is required.',
-                    validate: (value) =>
-                      userPubValid(value) || 'User ID invalid.',
+                    validate: {
+                      userPubIsValid: (value) =>
+                        userPubValid(value) || 'User ID invalid.',
+                      doesntExist: (value) =>
+                        !existingIds.includes(value) ||
+                        'Contact already exists!',
+                    },
                   });
                   inputRef.current = e;
                 }}
